@@ -7,7 +7,7 @@ import { useCookies } from "react-cookie";
 function Login() {
   const navigate = useNavigate();
   const location = useLocation();
-  const to = location.state?.from ? location.state.from : "/userPage";
+  const to = location.state?.from ? location.state.from : "/user";
 
   const { setcookie } = cookiePresentState();
 

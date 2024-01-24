@@ -39,7 +39,7 @@ function UserPage() {
   const handleCancel = () => {
     setShowForm(false);
   };
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     let data = {
       title: title,
@@ -49,7 +49,7 @@ function UserPage() {
     };
     data = JSON.stringify(data);
     try {
-      axiosInstance.post("/task", data);
+      await axiosInstance.post("/task", data);
       setDescription("");
       setTitle("");
       setDueDate("");
@@ -136,8 +136,8 @@ function UserPage() {
       </h1>
       {/* <div className="mx-auto w-11/12 grid grid-cols-2 gap-4 pb-7 pt-16 pl-7"> */}
       {noTasks ? (
-        <div className="text-3xl font-bold text-green-600">
-          No tasks to show
+        <div className="text-3xl h-4/5 bg-black w-7/12 mx-auto mt-14 rounded-3xl font-bold text-white flex flex-col  justify-center items-center">
+          No tasks to show. CreateYour First Task
         </div>
       ) : (
         <InfiniteScroll

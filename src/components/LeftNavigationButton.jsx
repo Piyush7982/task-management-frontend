@@ -18,7 +18,7 @@ function NavigationButtons() {
         />
 
         <Buttons
-          navigate="userProfile"
+          navigate="/user/profile"
           name="profile"
           Icon={FaUser}
           color={"white"}

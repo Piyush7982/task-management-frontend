@@ -47,7 +47,7 @@ function TaskCard({ data }) {
   const handleCancel = () => {
     setShowForm(false);
   };
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     let data = {
       title: Title,
@@ -57,7 +57,7 @@ function TaskCard({ data }) {
     };
     data = JSON.stringify(data);
     try {
-      axiosInstance.put(`/task/${_id}`, data);
+      await axiosInstance.put(`/task/${_id}`, data);
 
       toast.success("Task updated", {
         autoClose: 1000,
@@ -82,9 +82,9 @@ function TaskCard({ data }) {
       return;
     }
   };
-  const handleCompleted = () => {
+  const handleCompleted = async () => {
     try {
-      axiosInstance.put(`/task/${_id}`, { completed: !completedTask });
+      await axiosInstance.put(`/task/${_id}`, { completed: !completedTask });
       setCompletedTask((prev) => !prev);
       toast.success("Task updated", {
         autoClose: 1000,
@@ -106,9 +106,9 @@ function TaskCard({ data }) {
       return;
     }
   };
-  const handleDelete = () => {
+  const handleDelete = async () => {
     try {
-      axiosInstance.delete(`/task/${_id}`);
+      await axiosInstance.delete(`/task/${_id}`);
       toast.success("Task deleted", {
         autoClose: 1000,
         theme: "colored",

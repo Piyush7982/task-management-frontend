@@ -26,7 +26,7 @@ function Signup() {
   const [isValidName, setisValidName] = useState(false);
   const [nameError, setNameError] = useState("");
 
-  const [occupation, setOccupation] = useState("");
+  const [occupation, setOccupation] = useState("Student");
 
   function handleUsernameChange(event) {
     setUsername(event.target.value);
@@ -130,15 +130,16 @@ function Signup() {
 
       navigate("/login", { replace: true });
     } catch (error) {
-      if (error.message.includes("Network Error")) {
+      console.log(error);
+      if (error?.message?.includes("Network Error")) {
         navigate("/oops", { state: { from: "/signup" }, replace: true });
       } else if (
-        error.response.data.Error.error.includes("username already exists")
+        error?.response?.data?.Error?.error?.includes("username already exists")
       ) {
         setUsernameError("Username already exists, Try another one");
         setisValidUsername(false);
       } else if (
-        error.response.data.Error.error.includes("email already exists")
+        error?.response?.data?.Error?.error.includes("email already exists")
       ) {
         setEmailError("Email already exists, Try another one");
         setisValidEmail(false);
@@ -212,7 +213,8 @@ function Signup() {
             className="  font-bold text-lg    bg-white border border-gray-200 text-gray-700 p-2 rounded leading-tight focus:outline-none "
             id="occupation"
             onChange={handleOccupationChange}
-            defaultValue={"Student"}
+            value={occupation}
+            defaultChecked={"Student"}
           >
             <option value="Student">Student</option>
             <option value="Business">Business</option>

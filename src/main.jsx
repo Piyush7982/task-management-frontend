@@ -18,6 +18,7 @@ import ServerError from "./components/error-handling/internal.server.error";
 import NavigationButtons from "./components/LeftNavigationButton";
 import AuthLayout from "./auth.layout";
 import UserPage from "./components/userPage";
+import UserProfile from "./components/UserProfile";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="" element={<HomePage />} />
       <Route path="user" element={<AuthLayout />}>
         <Route path="" element={<UserPage />} />
+        <Route path="profile" element={<UserProfile />} />
       </Route>
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
