@@ -153,8 +153,8 @@ function Signup() {
   }
 
   return (
-    <div className=" h-screen w-screen flex justify-center items-center">
-      <div className="flex flex-col py-2 bg-[#357960]  w-2/5 h-[80vh]  justify-around items-center    rounded-2xl ">
+    <div className=" h-screen bg-green-500 w-screen flex justify-center items-center">
+      <div className="flex flex-col py-2 bg-[#FBFBFD]  w-2/5 h-[80vh]  justify-around items-center    rounded-2xl ">
         <h1 className="font-bold text-4xl text-black ">Create Account</h1>
         <form
           className="flex flex-col  justify-evenly  w-3/5 p-4  space-y-2 "
@@ -211,12 +211,9 @@ function Signup() {
           <select
             className="  font-bold text-lg    bg-white border border-gray-200 text-gray-700 p-2 rounded leading-tight focus:outline-none "
             id="occupation"
-            value={occupation}
             onChange={handleOccupationChange}
+            defaultValue={"Student"}
           >
-            <option value="" disabled hidden>
-              Select Occupation
-            </option>
             <option value="Student">Student</option>
             <option value="Business">Business</option>
             <option value="Service">Service</option>
@@ -228,7 +225,7 @@ function Signup() {
             type="submit"
             className={
               validForm
-                ? "p-1  bg-blue-500 text-xl text-white w-1/3 font-semibold rounded-md hover:cursor-pointer "
+                ? "p-1  bg-green-700 text-xl text-white w-1/3 font-semibold rounded-md hover:cursor-pointer "
                 : "bg-slate-500  p-1 text-xl text-slate-300  w-1/3 rounded-md hover:cursor-not-allowed"
             }
           >

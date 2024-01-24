@@ -74,8 +74,8 @@ function Login() {
     }
   }
   return (
-    <div className=" bg-[#FBFBFD] h-screen w-screen flex justify-center items-center">
-      <div className="flex flex-col py-2  w-2/5 h-[70vh]  justify-around items-center bg-[#357960]   rounded-2xl ">
+    <div className=" bg-green-500 h-screen w-screen flex justify-center items-center">
+      <div className="flex flex-col py-2  w-2/5 h-[50vh]  justify-around items-center  bg-[#FBFBFD]   rounded-2xl ">
         <h1 className="font-bold text-4xl text-black ">Login</h1>
         <p className={!error ? "hidden" : "text-red-500"}>{errorMessage}</p>
         <form
@@ -106,7 +106,7 @@ function Login() {
             type="submit"
             className={
               validForm
-                ? "p-1 bg-blue-500 text-xl text-white w-1/3 font-semibold rounded-md hover:cursor-pointer "
+                ? "p-1 bg-green-700 text-xl text-white w-1/3 font-semibold rounded-md hover:cursor-pointer "
                 : "bg-slate-500 p-1 text-xl text-slate-300  w-1/3 rounded-md hover:cursor-not-allowed"
             }
           >
