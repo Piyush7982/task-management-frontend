@@ -94,7 +94,7 @@ function UserPage() {
         const response = await axiosInstance.get(
           `/user/tasks/all?page=1&limit=6`
         );
-        console.log(response?.data?.Data[0]?.tasks);
+        // console.log(response?.data?.Data[0]?.tasks);
         if (response?.data?.Data[0]?.tasks?.length === 0) {
           setnoTasks(true);
         }
@@ -146,7 +146,6 @@ function UserPage() {
           hasMore={hasMore}
           loader={<Loader />}
         >
-          {!noTasks && tasks.length === 0 && <Loader />}
           {!noTasks && (
             <div className="mx-auto w-11/12 grid grid-cols-2 gap-10 pb-7 pt-16 pl-7">
               {tasks.map((task) => (

@@ -2,8 +2,23 @@ import { NavLink, Link } from "react-router-dom";
 import { FaTasks, FaUser } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
 import { RiTodoFill } from "react-icons/ri";
+import { useCookies, Cookies } from "react-cookie";
+import axiosInstance from "../helper/axios.instance";
 
 function NavigationButtons() {
+  const [cookies, setCookie, removeCookie] = useCookies(["access_token"]);
+  async function handleLogout() {
+    try {
+      const response = await axiosInstance.post("/user/logout");
+
+      removeCookie("access_token", { path: "/", maxAge: 0 });
+      // console.log(response);
+    } catch (error) {
+      console.log(error);
+      return;
+    }
+  }
+
   return (
     <div className=" bg-green-500 overflow-hidden  h-screen  w-[20%] flex flex-col items-center   ">
       <RiTodoFill color="white" size={50} className="my-10" />
@@ -28,8 +43,9 @@ function NavigationButtons() {
           replace={true}
           onClick={() => {
             localStorage.clear();
-            document.cookie =
-              "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            handleLogout();
+            // document.cookie =
+            //   "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           }}
           className="flex bg-slate-800 w-4/5 capitalize justify-evenly text-slate-100 font-semibold items-center   text-2xl rounded-2xl text-center px-2 py-3    transition   hover:scale-110 ease-in-out"
         >
