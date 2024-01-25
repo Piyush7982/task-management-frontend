@@ -5,7 +5,7 @@ import { RiTodoFill } from "react-icons/ri";
 
 function NavigationButtons() {
   return (
-    <div className=" bg-green-500 overflow-hidden mt-2 h-screen  w-[20%] flex flex-col items-center   ">
+    <div className=" bg-green-500 overflow-hidden  h-screen  w-[20%] flex flex-col items-center   ">
       <RiTodoFill color="white" size={50} className="my-10" />
       <div className=" mt-2   w-10/12 h-[70%] flex flex-col items-center justify-center gap-y-8 ">
         <Buttons

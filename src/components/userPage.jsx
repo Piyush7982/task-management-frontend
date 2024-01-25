@@ -131,7 +131,7 @@ function UserPage() {
 
   return (
     <div className=" w-[80%] h-full flex flex-col  overflow-auto py-10 relative">
-      <h1 className="font-bold text-green-600 flex justify-end mr-10 text-5xl">
+      <h1 className="font-bold -z-10 text-green-600 flex justify-end mr-10 text-5xl">
         Welcome @{userName}
       </h1>
       {/* <div className="mx-auto w-11/12 grid grid-cols-2 gap-4 pb-7 pt-16 pl-7"> */}

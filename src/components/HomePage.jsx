@@ -99,7 +99,10 @@ import { func } from "prop-types";
 // export default HomePage;
 import homepage1 from "../assets/homepage1.png";
 import homepage2 from "../assets/homepage2.png";
+import { useNavigate } from "react-router-dom";
+
 function HomePage() {
+  const navigate = useNavigate();
   return (
     <div className="w-screen h-screen  items-center mt-5 space-y-20 pb-3 mb-10  ">
       <div className="bg-[#0bda51] mx-auto rounded-xl w-11/12 h-[80%] flex flex-col items-center p-6 ">
@@ -133,6 +136,14 @@ function HomePage() {
             className="w-[30%] h-4/5 my-auto mr-3 bg-green-400 rounded-2xl"
           />
         </div>
+        <button
+          onClick={() => {
+            navigate("/user");
+          }}
+          className="bg-[#232115] mt-2 text-2xl text-white px-4 py-2 rounded mr-4 hover:bg-green-700"
+        >
+          Get Started
+        </button>
       </div>
       <div className=" mx-auto bg-black rounded-xl w-11/12 h-[80%] flex flex-col items-center p-6 ">
         <div className="text-center text-green-500 tracking-tight font-bold  text-6xl">
@@ -177,7 +188,21 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <div className="bg-white mx-auto rounded-xl w-11/12 h-[30%] flex flex-col items-center p-6 "></div>
+
+      <div className=" mx-auto bg-black rounded-xl  border-green-700 w-11/12 h-[30%] flex flex-col items-center p-6 ">
+        <h1 className=" text-white font-bold text-5xl ">
+          {" "}
+          So What Are You Waiting For?
+        </h1>
+        <button
+          onClick={() => {
+            navigate("/user");
+          }}
+          className="bg-green-400 w-3/12 mt-10 text-2xl text-black font-bold px-4 py-2 rounded mr-4 hover:bg-white hover:text-black"
+        >
+          Explore
+        </button>
+      </div>
     </div>
   );
 }

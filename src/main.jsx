@@ -15,10 +15,11 @@ import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
 import NotFound from "./components/error-handling/error.notfound";
 import ServerError from "./components/error-handling/internal.server.error";
-import NavigationButtons from "./components/LeftNavigationButton";
 import AuthLayout from "./auth.layout";
 import UserPage from "./components/userPage";
 import UserProfile from "./components/UserProfile";
+import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter(
@@ -30,8 +31,10 @@ const router = createBrowserRouter(
         <Route path="profile" element={<UserProfile />} />
       </Route>
       <Route path="login" element={<Login />} />
+      <Route path="contact" element={<ContactUs />} />
       <Route path="signup" element={<Signup />} />
       <Route path="500" element={<ServerError />} />
+      <Route path="about" element={<AboutUs />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )

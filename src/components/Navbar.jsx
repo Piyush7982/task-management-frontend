@@ -1,24 +1,6 @@
-// function Navbar() {
-//   return (
-//     <div className="w-screen sm:h-[8vh] flex justify-between  items-center sticky top-0 left-0 right-0  ">
-//       <div className=" w-2/12 text-center">Logo</div>
-//       <div className="flex justify-evenly text-slate-800  h-4/6 w-3/12">
-//         <button className="px-4 py-1 tracking-wide hover:scale-110 text-lg  hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100">
-//           Login
-//         </button>
-//         <button className="px-4 py-1 tracking-wide hover:scale-110 text-lg  hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100">
-//           Login
-//         </button>
-//         <button className="px-4 py-1 tracking-wide hover:scale-110  text-lg hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100">
-//           Login
-//         </button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Navbar;
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { IoLogoGitlab } from "react-icons/io5";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +23,7 @@ function Navbar() {
 
   let navbarClasses = [
     "w-screen",
-    "sm:h-[10vh]",
+    "sm:h-[13vh]",
     "flex",
     "justify-between",
     "items-center",
@@ -49,24 +31,53 @@ function Navbar() {
     "top-0",
     "left-0",
     "right-0",
+    "transition-all",
+    "delay-100",
+    "bg-slate-900",
+    "text-white",
+    "z-50",
   ];
   if (isScrolled) {
-    navbarClasses.push("bg-slate-900   text-white ");
+    navbarClasses.push("opacity-90");
   }
 
   return (
     <div className={navbarClasses.join(" ")}>
-      <div className="w-2/12 text-center">Logo</div>
+      <div className="w-2/12 items-center ml-10  ">
+        <IoLogoGitlab size={35} className="" />
+      </div>
       <div className="flex justify-evenly  h-4/6 w-3/12">
-        <button className="px-4 py-1 tracking-wide hover:scale-110 text-lg hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100">
-          Login
-        </button>
-        <button className="px-4 py-1 tracking-wide hover:scale-110 text-lg hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100">
-          Login
-        </button>
-        <button className="px-4 py-1 tracking-wide hover:scale-110 text-lg hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100">
-          Login
-        </button>
+        <NavLink
+          to="/"
+          replace={true}
+          className={({ isActive }) => {
+            return isActive
+              ? "px-4  h-12 flex flex-col items-center justify-center tracking-wide bg-green-500 text-white   text-lg  font-semibold rounded-xl "
+              : "px-4  h-12 flex flex-col items-center justify-center tracking-wide hover:scale-105 text-lg hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100";
+          }}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) => {
+            return isActive
+              ? "px-4  h-12 flex flex-col items-center justify-center tracking-wide bg-green-500 text-white   text-lg  font-semibold rounded-xl "
+              : "px-4  h-12 flex flex-col items-center justify-center tracking-wide hover:scale-105 text-lg hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100";
+          }}
+        >
+          About Us
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => {
+            return isActive
+              ? "px-4  h-12 flex flex-col items-center justify-center tracking-wide bg-green-500 text-white   text-lg  font-semibold rounded-xl "
+              : "px-4  h-12 flex flex-col items-center justify-center tracking-wide hover:scale-105 text-lg hover:bg-green-500 hover:text-white font-semibold rounded-xl transition-all delay-100";
+          }}
+        >
+          Contact Us
+        </NavLink>
       </div>
     </div>
   );
