@@ -1,5 +1,5 @@
 import { atom, useRecoilState } from "recoil";
-import { useCookies, Cookies } from "react-cookie";
+import { Cookies } from "react-cookie";
 const cookies = new Cookies();
 const myCookie = cookies.get("access_token");
 
