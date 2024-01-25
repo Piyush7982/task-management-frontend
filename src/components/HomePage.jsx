@@ -105,7 +105,7 @@ function HomePage() {
   const navigate = useNavigate();
   return (
     <div className="w-screen h-screen  items-center mt-5 space-y-20 pb-3 mb-10  ">
-      <div className="bg-[#0bda51] mx-auto rounded-xl w-11/12 h-[80%] flex flex-col items-center p-6 ">
+      <div className="bg-[#0bda51] mx-auto rounded-xl w-11/12 h-[85%] flex flex-col items-center p-6 ">
         <div className=" flex flex-col gap-6 items-center ">
           {" "}
           <div className="text-[#232115]  text-center tracking-tight font-bold  text-6xl">
@@ -118,7 +118,7 @@ function HomePage() {
           </div>
         </div>
         <div className="w-11/12 flex justify-evenly mt-8  h-[70%] ">
-          <div className="w-[65%] h-4/5 my-auto bg-[#01693F]  p-6 rounded-2xl flex flex-col items-center justify-evenly">
+          <div className="w-[70%] h-4/5 my-auto bg-[#01693F]  p-6 rounded-2xl flex flex-col items-center justify-evenly">
             <div className="font-bold text-white text-4xl">
               {" "}
               Choose Our Task Manager: Simplify Your Life
