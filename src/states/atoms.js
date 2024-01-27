@@ -1,5 +1,5 @@
 import { atom, useRecoilState } from "recoil";
-import { Cookies } from "react-cookie";
+import { useCookies, Cookies } from "react-cookie";
 const cookies = new Cookies();
 const myCookie = cookies.get("access_token");
 
@@ -12,3 +12,14 @@ export const cookiePresentState = () => {
   //   console.log(cookie);
   return { cookie, setcookie };
 };
+// import { atom, useRecoilState } from "recoil";
+
+// const cookiePresent = atom({
+//   key: "cookiePresent",
+//   default: false,
+// });
+// export const cookiePresentState = () => {
+//   const [cookie, setcookie] = useRecoilState(cookiePresent);
+
+//   return { cookie, setcookie };
+// };
