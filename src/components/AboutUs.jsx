@@ -1,6 +1,6 @@
 function AboutUs() {
   return (
-    <div className="mx-auto bg-black  w-screen h-screen flex flex-col items-center p-6">
+    <div className="mx-auto bg-black  w-screen min-h-screen flex flex-col items-center p-10">
       <div className="text-center text-green-500 tracking-tight font-bold text-6xl">
         About Us
       </div>

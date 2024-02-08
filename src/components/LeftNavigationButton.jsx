@@ -2,19 +2,14 @@ import { NavLink, Link } from "react-router-dom";
 import { FaTasks, FaUser } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
 import { RiTodoFill } from "react-icons/ri";
-import { useCookies, Cookies } from "react-cookie";
 import axiosInstance from "../helper/axios.instance";
 
 function NavigationButtons() {
-  const [cookies, setCookie, removeCookie] = useCookies(["access_token"]);
   async function handleLogout() {
     try {
-      const response = await axiosInstance.post("/user/logout");
-
-      removeCookie("access_token", { path: "/", maxAge: 0 });
-      // console.log(response);
+      localStorage.clear();
+      await axiosInstance.post("/user/logout", {});
     } catch (error) {
-      console.log(error);
       return;
     }
   }

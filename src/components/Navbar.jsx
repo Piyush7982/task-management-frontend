@@ -23,7 +23,7 @@ function Navbar() {
 
   let navbarClasses = [
     "w-screen",
-    "sm:h-[13vh]",
+    "sm:h-[11vh]",
     "flex",
     "justify-between",
     "items-center",
@@ -38,7 +38,7 @@ function Navbar() {
     "z-50",
   ];
   if (isScrolled) {
-    navbarClasses.push("opacity-90");
+    navbarClasses.push("opacity-95");
   }
 
   return (

@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { cookiePresentState } from "../../states/atoms";
 import axiosInstance from "../../helper/axios.instance";
-import { useCookies } from "react-cookie";
 
 function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const to = location.state?.from ? location.state.from : "/user";
-
-  const { setcookie } = cookiePresentState();
 
   const [validForm, setvalidForm] = useState(false);
   const [error, seterror] = useState(false);
@@ -51,9 +47,8 @@ function Login() {
       localStorage.setItem("id", data?.data?.Data?.id);
       // setcookie(document.cookie);
 
-      setcookie(true);
       //   setcookie(document.cookie.split("=")[0] == "access_token" ? true : false);
-
+      localStorage.setItem("status", true);
       navigate(to, { replace: true });
     } catch (error) {
       seterror(true);

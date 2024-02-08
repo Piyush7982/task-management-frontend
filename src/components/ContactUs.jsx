@@ -3,12 +3,12 @@ import { FaRegCopyright } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 function ContactUs() {
   return (
-    <div className="mx-auto bg-black  w-screen h-screen flex flex-col items-center p-6">
+    <div className="mx-auto bg-black  w-screen min-h-screen flex flex-col items-center p-10">
       <div className="text-center text-green-500 tracking-tight font-bold text-6xl">
         Contact Us
       </div>
       <div className="w-11/12 flex justify-evenly mt-8 h-[70%]">
-        <div className="w-[85%] h-4/5 my-auto bg-[#01693F] p-6 rounded-2xl flex flex-col items-center justify-evenly">
+        <div className="w-[85%] h-[22rem] my-auto bg-[#01693F] p-6 rounded-2xl flex flex-col items-center justify-evenly">
           <div className="font-bold mb-5 text-white text-4xl">
             Stay Connected
           </div>
