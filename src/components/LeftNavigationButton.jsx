@@ -39,8 +39,6 @@ function NavigationButtons() {
           onClick={() => {
             localStorage.clear();
             handleLogout();
-            // document.cookie =
-            //   "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
           }}
           className="flex bg-slate-800 w-4/5 capitalize justify-evenly text-slate-100 font-semibold items-center   text-2xl rounded-2xl text-center px-2 py-3    transition   hover:scale-110 ease-in-out"
         >

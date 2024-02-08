@@ -131,8 +131,7 @@ function UserProfile() {
       }, 500);
       setTimeout(() => {
         localStorage.clear();
-        document.cookie =
-          "access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
         navigate("/login", { replace: true });
       }, 1000);
     } catch (error) {
@@ -288,9 +287,8 @@ function UserProfile() {
 
 function ShimmerCard() {
   return (
-    <div className="w-[80%] h-screen border mt-2 border-slate-600 animate-pulse">
+    <div className=" mt-36 h-3/5 w-7/12 mx-auto bg-green-600 flex flex-col justify-center items-center rounded-3xl py-5 px-10 animate-pulse">
       <div className="w-9/12 h-4/5 mb-5 mt-5 mx-auto bg-gradient-to-r from-slate-900 via-gray-900 to-slate-900 rounded-lg border-[0.1px] border-slate-700 flex flex-col justify-between py-3">
-        <div className="mx-auto bg-slate-600 min-h-16 w-9/12 rounded-lg mb-3"></div>
         <div className="mx-auto bg-slate-600 min-h-16 w-9/12 rounded-lg mb-3"></div>
         <div className="mx-auto bg-slate-600 min-h-16 w-9/12 rounded-lg mb-3"></div>
         <div className="mx-auto bg-slate-600 min-h-16 w-9/12 rounded-lg mb-3"></div>

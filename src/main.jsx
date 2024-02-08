@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { CookiesProvider } from "react-cookie";
 import { RecoilRoot } from "recoil";
 import {
   Route,
@@ -41,9 +40,7 @@ const router = createBrowserRouter(
 );
 
 root.render(
-  <CookiesProvider defaultSetOptions={{ path: "/" }}>
-    <RecoilRoot>
-      <RouterProvider router={router} />
-    </RecoilRoot>
-  </CookiesProvider>
+  <RecoilRoot>
+    <RouterProvider router={router} />
+  </RecoilRoot>
 );

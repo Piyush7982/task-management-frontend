@@ -45,9 +45,6 @@ function Login() {
 
       localStorage.setItem("user", data?.data?.Data?.username);
       localStorage.setItem("id", data?.data?.Data?.id);
-      // setcookie(document.cookie);
-
-      //   setcookie(document.cookie.split("=")[0] == "access_token" ? true : false);
       localStorage.setItem("status", true);
       navigate(to, { replace: true });
     } catch (error) {
